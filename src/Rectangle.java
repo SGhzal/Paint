@@ -4,7 +4,7 @@ public class Rectangle  extends Figure {
         super(c,new Point(px,py));
     }
 
-
+    //public abstract void draw(Graphics g);
 
     @Override
     public void draw(Graphics g) {

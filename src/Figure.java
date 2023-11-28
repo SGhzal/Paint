@@ -5,47 +5,38 @@ public abstract class Figure {
     protected Point origin;
     protected int length;
     protected int width;
+    public int surface;
+    public int perimetre;
 
-    public Figure(Color color, Point origin) {
-        this.color = color;
-        this.origin = origin;
-    }
 
-    public Color getColor() {
-        return color;
-    }
-
-    public Point getOrigin() {
-        return origin;
-    }
-
-    public int getLeight() {
-        return length;
-    }
-
-    public int getWidth() {
-        return width;
-    }
+    public Figure(Color c, Point point) {
+        this.color=c;
+        this.origin=point;
+        }
 
     public void setBoundingBox(int heightBB, int widthBB) {
         this.length = heightBB;
         this.width = widthBB;
     }
     public int getperimetre(){
-        return 2*(length+width);
+        perimetre=2*(length*width);
+        return perimetre;
     }
     //getsurface
+
     public int getsurface(){
-        return length*width;
+        surface=length*width;
+        return surface;
     }
-    public abstract void draw(Graphics g);
+    //public abstract void draw(Graphics g);
     @Override
     public String toString() {
         return "Figure{" +
                 "color=" + color +
-                ", origin=" + origin +
                 ", height=" + length +
                 ", width=" + width +
                 '}';
     }
+
+    public abstract void draw(Graphics g);
 }

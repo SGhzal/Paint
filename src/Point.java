@@ -1,31 +1,31 @@
 public class Point {
-    private int x;// Coordonnée x du point.
-    private int y; // Coordonnée y du point.
+    private int px;// Coordonnée x du point.
+    private int py; // Coordonnée y du point.
     // Les constructeur
     public Point() {
-        this.x = 0;//private
-        this.y = 0;//private
+        this.px = 0;//private
+        this.py = 0;//private
     }
     public Point(int x, int y) {
-        this.x = x;//private
-        this.y = y;//private
+        this.px = x;//private
+        this.py = y;//private
     }
     // getters
 
-    public int gety() {
-        return y;
+    public int getPyy() {
+        return py;
     }
 
     // Setters
-    public void setX(int x) {
-        this.x = x;
+    public void setPx(int x) {
+        this.px = x;
     }
-    public void setY(int y) {
-        this.y = y;
+    public void setPy(int y) {
+        this.py = y;
     }
-
+    //public abstract void draw(Graphics g);
     public String tostring(){
-        return "Point{"+"X"+x+",Y="+y+"}";
+        return "Point{"+"X"+px+",Y="+py+"}";
     }
     }
 
