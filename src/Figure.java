@@ -1,42 +1,26 @@
 import java.awt.*;
-
 public abstract class Figure {
-    protected Color color;
-    protected Point origin;
-    protected int length;
-    protected int width;
-    public int surface;
-    public int perimetre;
+    // point et color et graphic appartenant à java.awt .*
+    protected Point origine;
+    protected Color c;
 
-
-    public Figure(Color c, Point point) {
-        this.color=c;
-        this.origin=point;
-        }
-
-    public void setBoundingBox(int heightBB, int widthBB) {
-        this.length = heightBB;
-        this.width = widthBB;
+    // initialisation de l'origine(0,0) avec la couleur :
+    public Figure(){
+        this.origine = new Point(0,0);
     }
-    public int getperimetre(){
-        perimetre=2*(length*width);
-        return perimetre;
+    public Figure(int px, int py, Color col) {
+        this.origine = new Point(px, py);
+        this.c = col;
     }
-    //getsurface
+    // voir rectangle
+    public abstract double getPerimetre();
+    public abstract double getSurface();
+    public abstract void setBoundingBox(int lengthBB, int widthBB);
+    public abstract void draw(Graphics g);
 
-    public int getsurface(){
-        surface=length*width;
-        return surface;
-    }
-    //public abstract void draw(Graphics g);
+    // affichage
     @Override
     public String toString() {
-        return "Figure{" +
-                "color=" + color +
-                ", height=" + length +
-                ", width=" + width +
-                '}';
+        return "La figure commence de là :(" + this.origine.getX() + ", " + this.origine.getY() + ")";
     }
-
-    public abstract void draw(Graphics g);
 }

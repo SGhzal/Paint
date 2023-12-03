@@ -1,6 +1,9 @@
 public class Main {
-public static void main (String[] args) {
- System.out.println("Hello world");
-}
+ //private static Random rand = new Random();
+
+ public static void main(String args[])
+ {
+  Window win = new Window("window",800,600);
  }
 
+}
