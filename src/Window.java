@@ -12,7 +12,7 @@ public class Window extends JFrame implements ActionListener{
         String cmd = e.getActionCommand();
 
 
-        if(cmd.equals("Rouge")){
+        if(cmd.equals("Rojo")){
             monDessin.setColor(Color.red);
         }
 
@@ -20,15 +20,15 @@ public class Window extends JFrame implements ActionListener{
             monDessin.setColor(Color.orange);
         }
 
-        else if(cmd.equals("Jaune")){
+        else if(cmd.equals("Yellow")){
             monDessin.setColor(Color.yellow);
         }
 
-        else if(cmd.equals("Vert")){
+        else if(cmd.equals("Green")){
             monDessin.setColor(Color.green);
         }
 
-        else if(cmd.equals("Bleu")){
+        else if(cmd.equals("Blue")){
             monDessin.setColor(Color.blue);
         }
 
@@ -40,7 +40,7 @@ public class Window extends JFrame implements ActionListener{
             monDessin.setColor(Color.pink);
         }
 
-        else if(cmd.equals("Noir")){
+        else if(cmd.equals("Black")){
             monDessin.setColor(Color.black);
         }
 
@@ -55,13 +55,18 @@ public class Window extends JFrame implements ActionListener{
             monDessin.reset();
         }
 
-        else if(cmd.equals("Save")){
+        else if(cmd.equals("Save")){JFileChooser fds=new JFileChooser();
+            int c=fds.showSaveDialog(this);
+            if (c==JFileChooser.CANCEL_OPTION)
+            {System.out.println("Cancelled");}
+            String nameFile=fds.getSelectedFile().getAbsolutePath();
+            monDessin.saveDrawing(nameFile);
         }
 
         else if(cmd.equals("Auteurs")){
             JOptionPane info = new JOptionPane();
             info.showInternalMessageDialog(
-                    info, "GHZAl Bouziane !",
+                    info, "GHZAL Bouziane !",
                     "Vive Java",
                     JOptionPane.INFORMATION_MESSAGE);
         }
@@ -148,28 +153,28 @@ public class Window extends JFrame implements ActionListener{
         JPanel panneauCouleur=new JPanel();
         panneauCouleur.setLayout(new GridLayout(2,4));
 
-        JButton boutonrouge=new JButton("Rouge");
-        boutonrouge.setBackground(Color.red);
-        boutonrouge.addActionListener(this);
+        JButton boutonred=new JButton("Rojo");
+        boutonred.setBackground(Color.red);
+        boutonred.addActionListener(this);
 
         JButton boutonorange=new JButton("Orange");
         boutonorange.setBackground(Color.orange);
         boutonorange.addActionListener(this);
 
 
-        JButton boutonjaune=new JButton("Jaune");
-        boutonjaune.setBackground(Color.yellow);
-        boutonjaune.addActionListener(this);
+        JButton boutonyellow=new JButton("Yellow");
+        boutonyellow.setBackground(Color.yellow);
+        boutonyellow.addActionListener(this);
 
 
-        JButton boutonvert=new JButton("Vert");
-        boutonvert.setBackground(Color.green);
-        boutonvert.addActionListener(this);
+        JButton boutongreen=new JButton("Green");
+        boutongreen.setBackground(Color.green);
+        boutongreen.addActionListener(this);
 
 
-        JButton boutonbleu=new JButton("Bleu");
-        boutonbleu.setBackground(Color.blue);
-        boutonbleu.addActionListener(this);
+        JButton boutonblue=new JButton("Blue");
+        boutonblue.setBackground(Color.blue);
+        boutonblue.addActionListener(this);
 
 
         JButton boutonmagenta=new JButton("Magenta");
@@ -182,18 +187,18 @@ public class Window extends JFrame implements ActionListener{
         boutonrose.addActionListener(this);
 
 
-        JButton boutonnoir=new JButton("Noir");
-        boutonnoir.setBackground(Color.black);
-        boutonnoir.addActionListener(this);
+        JButton boutonblack=new JButton("Black");
+        boutonblack.setBackground(Color.black);
+        boutonblack.addActionListener(this);
 
-        panneauCouleur.add(boutonrouge);
+        panneauCouleur.add(boutonred);
         panneauCouleur.add(boutonorange);
-        panneauCouleur.add(boutonjaune);
-        panneauCouleur.add(boutonvert);
-        panneauCouleur.add(boutonbleu);
+        panneauCouleur.add(boutonyellow);
+        panneauCouleur.add(boutongreen);
+        panneauCouleur.add(boutonblue);
         panneauCouleur.add(boutonmagenta);
         panneauCouleur.add(boutonrose);
-        panneauCouleur.add(boutonnoir);
+        panneauCouleur.add(boutonblack);
 
         JPanel panneauOutil=new JPanel();
         JButton boutonSquare=new JButton("square");

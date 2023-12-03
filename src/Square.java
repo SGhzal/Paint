@@ -11,20 +11,20 @@ public class Square extends Rectangle{
     }
     public void setLength(int side){
         super.setLength(side);
-        super.setWidth(side);
+        super.setLength(side);
     }
     public void setWidth(int side){
         super.setLength(side);
-        super.setWidth(side);
+        super.setLength(side);
     }
 
-    public void setBoundingBox(int lengthBB,int widhtBB){
+    public void setBoundingBox(int lengthBB,int lenghtBB){
         super.setLength(lengthBB);
-        super.setWidth(widhtBB);
+        super.setLength(lenghtBB);
     }
 
     public void draw(Graphics g){
         g.setColor(c);
-        g.fillRect(origine.getX(),origine.getY(),length,width);
+        g.fillRect(origine.getX(),origine.getY(),length,length);
     }
 }

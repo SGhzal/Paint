@@ -118,11 +118,11 @@ public class Drawing extends JPanel implements MouseMotionListener, MouseListene
         this.y=e.getY();
 
         switch (nomFigure){
-            case "Carre" : liste.add(new Square(x,y,c));
+            case "Square" : liste.add(new Square(x,y,c));
                 break;
             case "Rectangle" : liste.add(new Rectangle(x,y,c));
                 break;
-            case "Cercle" : liste.add(new Circle(x,y,c));
+            case "Circle" : liste.add(new Circle(x,y,c));
                 break;
             case "Ellipse" : liste.add(new Ellipse(x,y,c));
                 break;
