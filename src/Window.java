@@ -4,55 +4,52 @@ import java.awt.event.*;
 
 
 public class Window extends JFrame implements ActionListener{
-    private Drawing monDessin=new Drawing();
-
-
-
+    private Drawing mD=new Drawing();
     public void actionPerformed(ActionEvent e) {
         String cmd = e.getActionCommand();
 
 
         if(cmd.equals("Rojo")){
-            monDessin.setColor(Color.red);
+            mD.setColor(Color.red);
         }
 
         else if(cmd.equals("Orange")){
-            monDessin.setColor(Color.orange);
+            mD.setColor(Color.orange);
         }
 
         else if(cmd.equals("Yellow")){
-            monDessin.setColor(Color.yellow);
+            mD.setColor(Color.yellow);
         }
 
         else if(cmd.equals("Green")){
-            monDessin.setColor(Color.green);
+            mD.setColor(Color.green);
         }
 
         else if(cmd.equals("Blue")){
-            monDessin.setColor(Color.blue);
+            mD.setColor(Color.blue);
         }
 
         else if(cmd.equals("Magenta")){
-            monDessin.setColor(Color.magenta);
+            mD.setColor(Color.magenta);
         }
 
         else if(cmd.equals("Rose")){
-            monDessin.setColor(Color.pink);
+            mD.setColor(Color.pink);
         }
 
         else if(cmd.equals("Black")){
-            monDessin.setColor(Color.black);
+            mD.setColor(Color.black);
         }
 
         else if(cmd.equals("Open")){
             JFileChooser fdo=new JFileChooser();
             int x=fdo.showOpenDialog(this);
             String nameFileOpen=fdo.getSelectedFile().getAbsolutePath();
-            monDessin.recallDrawing(nameFileOpen);
+            mD.recallDrawing(nameFileOpen);
         }
 
         else if(cmd.equals("New")){
-            monDessin.reset();
+            mD.reset();
         }
 
         else if(cmd.equals("Save")){JFileChooser fds=new JFileChooser();
@@ -60,7 +57,7 @@ public class Window extends JFrame implements ActionListener{
             if (c==JFileChooser.CANCEL_OPTION)
             {System.out.println("Cancelled");}
             String nameFile=fds.getSelectedFile().getAbsolutePath();
-            monDessin.saveDrawing(nameFile);
+            mD.saveDrawing(nameFile);
         }
 
         else if(cmd.equals("Auteurs")){
@@ -72,19 +69,19 @@ public class Window extends JFrame implements ActionListener{
         }
 
         else if(cmd.equals("Ellipse")){
-            monDessin.setnomFigure(cmd);
+            mD.setnomFigure(cmd);
         }
 
         else if(cmd.equals("Square")){
-            monDessin.setnomFigure(cmd);
+            mD.setnomFigure(cmd);
         }
 
         else if(cmd.equals("Circle")){
-            monDessin.setnomFigure(cmd);
+            mD.setnomFigure(cmd);
         }
 
         else if(cmd.equals("Rectangle")){
-            monDessin.setnomFigure(cmd);
+            mD.setnomFigure(cmd);
         }
 
         else if(cmd.equals("Quit")) {
@@ -142,7 +139,7 @@ public class Window extends JFrame implements ActionListener{
         m.add(menu2);
         setJMenuBar(m);
 
-        contentPane.add(monDessin);
+        contentPane.add(mD);
 
         JPanel panneau=new JPanel();
         panneau.setLayout(new GridLayout(1,2));
